@@ -127,9 +127,9 @@ header nav {
     min-width: 320px;
     max-width: 500px;
 }
-/* li {
+ul {
     list-style-type: circle;
-} */
+}
 header nav ul {
     font-family: "Azo Sans Regular";
     display: flex;

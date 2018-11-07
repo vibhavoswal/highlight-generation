@@ -6,8 +6,10 @@
   width: 90%;
   height: 100%;
   padding: 25px 0px;
+  padding-bottom: 60px;
   max-width: 1000px;
   min-width: 320px;
+  justify-content: center;
 }
 
 .videoContainer label {
