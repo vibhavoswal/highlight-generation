@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+
+<!-- <link rel="stylesheet" type="text/css" href="css/demo.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+
+	<link rel="stylesheet" type="text/css" href="css/playerRec.css">
+
+
+	<link rel="stylesheet" type="text/css" href="css/carousel.css">
+	<title>Lightbox</title>
+</head>
+
+
+<body>
+
+<div id="text-carousel" class="carousel slide" data-ride="carousel">
+	<!-- Wrapper for slides -->
+	<div class="row">
+		<div class="col-xs-offset-3 col-xs-6">
+			<div class="carousel-inner">
+				<div class="item active">
+					<div class="carousel-content">
+						<div>
+							<p>Face Recognition in Sports videos during Close-up Shots <br> Project Areas: Computer Vision, Image Processing, Facial Recognition, Machine Learning</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="carousel-content">
+						<div>
+							<p>AIM: <br>
+								<ul>
+									<li>The aim of this project is to identify the player in close-up shots and display their profile in a visually appealing banner.</li>
+									<li>All sports television channels when broadcasting videos add profile of players manually in the videos at appropriate times. This is mostly when a player appears in a close-up shot. </li>
+									<li>This project aims at doing so automatically and thereby reducing manual labour spent in doing so. </li>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="carousel-content">
+						<div>
+							<p>Dataset Creation
+
+								<ul>
+									<li>Dataset consisting of 5-10 images of every player was created.</li>
+									<li>For career statistics a Kaggle dataset was used.</li>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carousel-content">
+						<div>
+							<p>Face Detection:
+
+								<ul>
+									<li>The underlying dlib’s frontal face detector gives the choice of using Histogram of Oriented Gradients (HOG) model or CNN model for detection of faces. </li>
+									<li>The HOG model was finalised as it provides a good blend of speed and accuracy.</li>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carousel-content">
+						<div>
+							<p>Face Recognition for Close-up Shots:
+
+								<ul>
+									<li>OpenCV is used to process the video, skipping every alternate frame. If one or more faces are detected, then the one with the largest area is selected, and this area should be greater than a certain threshold to avoid detecting people in the
+										crowd. </li>
+									<li>After a face is detected its feature vector is compared using Euclidean distances with each face in the dataset, and the one with least distance is selected.</li>
+									<li>We have also put an upper bound on the face distance, to avoid incorrect results.</li>
+									<li>A banner for display of career highlights of the detected person has been made using matplotlib.</li>
+
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carousel-content">
+						<div>
+							<p>Face Encodings:
+
+								<ul>
+									<li>The face_recognition module forms features for 68 points on the faces. A 128-length feature vector is created
+										on each face in the dataset which it saves in a binary file for future use.
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Controls -->
+	<a class="left carousel-control" href="#text-carousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a class="right carousel-control" href="#text-carousel" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+
+</div>
+</body>

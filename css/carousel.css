@@ -1,0 +1,18 @@
+.body {
+  background-color: #333333;
+}
+
+.carousel-content {
+    color:black;
+    display:flex;
+    width: 90%;
+    font-size: 1.5em;
+    align-items:center;
+    font-family: "Azo Sans Regular";
+}
+
+#text-carousel {
+  width: 100vw;
+  height: 100vh;
+  padding: 50px;
+}

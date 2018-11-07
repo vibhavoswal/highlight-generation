@@ -23,7 +23,7 @@
 
 <section id="Landing">
   <label>
-    <h2 class="videoHeading">Player Recognition</h2>
+    <h2 class="videoHeading">Source Video & Generated Highlights</h2>
     <div class="icon"></div>
   </label>
   <div class="videoContainer" style="background-image: url(photos/fv_shots.png)">
@@ -37,8 +37,86 @@
 <section id="lightbox">
   <div id="content">
     <div id="cross"></div>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  <div>
+
+
+<div id="textContained">
+<br>
+<p>
+  <h2>Highlights generation of Football Matches</h2><br>
+  Project Areas: Computer Vision, Image Processing, Audio Processing, Machine Learning, Object Detection.
+</p>
+<br><br>
+<p>
+  <h3>Aim:</h3>
+  <ul>
+    <li>The aim of this project is to automate the process of generating highlights of a football match using machine learning.</li>
+    <li>Highlights are at times more important than the match itself because most would not have the time to watch the whole match and would rather prefer to watch the important parts of a match. </li>
+</p>
+
+<br><br>
+<p>
+  <h3>Shot Boundary Detection:</h3>
+  <ul>
+    <li>Shot Boundary detection is used to split the input video into its constituent shots.</li>
+    <li>Chi-squared algorithm has been implemented for shot boundary detection in OpenCV as it is good for detecting hard cuts in videos.</li>
+</p>
+
+<br><br>
+<p>
+  <h3>Dataset Creation:</h3>
+  <ul>
+    <li>We downloaded 4 football match videos of varying lengths and ran the shot detector algorithm to split them into constituent shots. The number of shots amassed to 800. These shots were classified as highlights and non-highlights manually. We ended up with a 3:1 ratio of negatives to positives. Later, we extracted audio from the shots and created separate corresponding audio files using ffmpeg.</li>
+</p>
+
+<br><br>
+<p>
+  <h3>Audio Feature Extraction:</h3>
+  <ul>
+    <li>PyAudioAnalysis is being used for extracting audio features as it gives 34 relevant features for a single audio file including MFCC features and audio amplitude.</li>
+  </ul>
+</p>
+
+<br><br>
+<p>
+  <h3>Object Detection:</h3>
+  <ul>
+    <li>For visual features, the ball and goalposts were detected in frames by training different tensorflow object detection models.</li>
+    <li>We used 3 different models - Faster-RCNN with Inception, SSD Lite with MobileNet, SSD with Inception were tried.</li>
+    <li>Finally, SSD Lite with Mobilenet was chosen because of its speed. </li>
+  </ul>
+</p>
+
+<br><br>
+<p>
+  <h3>Visual Feature Computation:</h3>
+  The following features have been computed over certain intervals of a shot:
+  <ul>
+    <li>a) Average Size of a Goalpost</li>
+    <li>b) Percentage of frames in which Goalpost was detected</li>
+    <li>c) Position of Goalpost</li>
+  </ul>
+</p>
+
+<br><br>
+<p>
+  <h3>Prediction using Scikit-Learn’s SVM:</h3>
+  <ul>
+    <li>Now for each shot in training dataset a feature vector comprising of audio and visual features as well as the shot duration was generated and this was trained on scikit-learn's object detection model.</li>
+  </ul>
+</p>
+
+<br><br>
+<p>
+  <h3>Stitching the shots into highlights:</h3>
+  <ul>
+    <li>Given an input match video it was divided into shots and then for each shot its features were extracted and its probability of being a highlight was computed using the trained SVM model.</li>
+    <li>Finally the shots with highest probability were added into output video as long as the probability was greater than 0.5 and the maximum length of output video was not exceeded.</li>
+    <li>Selected Shots were stitched using MoviePy to generate the highlights.</li>
+  </ul>
+</p>
+
+</div>
+</div>
 </section>
 
 </body>
