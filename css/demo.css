@@ -70,7 +70,6 @@ header {
   opacity: 1;
 }
 
-
 .text {
   background-color: #d39;
   color: white;
@@ -80,10 +79,6 @@ header {
 
 
 /* ------------------------------- */
-
-header nav ul li:hover {
-    cursor: pointer;
-}
 
 .btn {
   border-radius: 5px;
@@ -119,7 +114,6 @@ header nav ul li:hover {
 }
 
 header nav {
-/*    background: #d39;*/
     width: 50%;
     display: flex;
     justify-content: space-between;
@@ -127,9 +121,23 @@ header nav {
     min-width: 320px;
     max-width: 500px;
 }
-ul {
-    list-style-type: circle;
+
+header nav #ham {
+    width: 40px;
+    height: 40px;
+    background: url(green.jpg) center no-repeat;
+    display: none;
+    padding-left: 100px;
+    margin-top: 25px;
+    transition: 0.2s transform cubic-bezier(1, 0, 0, 1);
 }
+
+a {
+    color: white;
+    text-align: center;
+    text-decoration: none !important;
+}
+
 header nav ul {
     font-family: "Azo Sans Regular";
     display: flex;
@@ -150,34 +158,12 @@ header nav ul li {
     position: relative;
 }
 
+header nav ul li:hover {
+    cursor: pointer;
+}
+
 header nav ul li a {
   position: relative;
-}
-
-a {
-    color: white;
-    text-align: center;
-    text-decoration: none !important;
-}
-a.unlink {
-  color: inherit;
-}
-a.unlink:hover {
-  color: inherit;
-}
-header nav #ham {
-    width: 40px;
-    height: 40px;
-    background: url(green.jpg) center no-repeat;
-    display: none;
-    padding-left: 100px;
-    margin-top: 25px;
-    transition: 0.2s transform cubic-bezier(1, 0, 0, 1);
-
-}
-
-header nav ul li a:hover::after {
-    width: 120%;
 }
 
 header nav ul li a::after {
@@ -189,6 +175,10 @@ header nav ul li a::after {
     height: 1px;
     background: #fff;
     transition: 0.4s all cubic-bezier(1, 0, 0, 1);
+}
+
+header nav ul li a:hover::after {
+    width: 120%;
 }
 
 #lightbox {
@@ -203,7 +193,6 @@ header nav ul li a::after {
   justify-content: center;
 }
 
-
 #content {
   position: relative;
   background: white;
@@ -213,8 +202,8 @@ header nav ul li a::after {
   min-width: 320px;
   padding: 20px 30px;
   border-radius: 7.5px;
-
 }
+
 #textContained {
   position: relative;
   background: white;
@@ -233,3 +222,13 @@ header nav ul li a::after {
   background: url(../photos/cancel.svg) center no-repeat;
   background-size: 90%;
 }
+/* li{
+  display: list-item;
+  list-style-type: circle;
+} */
+/* a.unlink {
+  color: inherit;
+}
+a.unlink:hover {
+  color: inherit;
+} */
