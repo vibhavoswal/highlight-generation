@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/fonts.css">
+  <link rel="stylesheet" type="text/css" href="css/demo.css">
+  <link rel="stylesheet" type="text/css" href="css/playerRec.css">
+  <script>
+  document.body.innerHTML="";
+  </script>
+
+  <title>Demo</title>
+</head>
+
+
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a class="unlink" href="index.html">HOME</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="Landing">
+
+  <div class="videoContainer">
+    <label>
+      <h2 class="videoHeading">Player Recognition</h2>
+      <div class="icon"></div>
+    </label>
+    <iframe src="https://www.youtube.com/embed/0VjLPFJ9ys0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="lightbox">
+  <div id="content">
+    <div id="cross"></div>
+
+
+<div id="textContained">
+<br>
+<p>
+  <h2>Face Recognition in Sports videos during Close-up Shots</h2><br>
+  Project Areas: Computer Vision, Image Processing, Facial Recognition, Machine Learning
+</p>
+
+<br><br>
+<p>
+  <h3>Aim:</h3>
+  <ul>
+    <li>The aim of this project is to identify the player in close-up shots and display their profile in a visually appealing banner.</li>
+    <li>All sports television channels when broadcasting videos add profile of players manually in the videos at appropriate times. This is mostly when a player appears in a close-up shot. </li>
+    <li>This project aims at doing so automatically and thereby reducing manual labour spent in doing so. </li>
+</p>
+
+<br><br>
+<p>
+  <h3>Dataset Creation:</h3>
+  <ul>
+    <li>Dataset consisting of 5-10 images of every player was created.</li>
+    <li>For career statistics a Kaggle dataset was used.</li>
+</p>
+
+<br><br>
+<p>
+  <h3>Face Detection:</h3>
+  <ul>
+    <li>The underlying dlib’s frontal face detector gives the choice of using Histogram of Oriented Gradients (HOG) model or CNN model for detection of faces. </li>
+    <li>The HOG model was finalised as it provides a good blend of speed and accuracy.</li>
+</p>
+
+<br><br>
+<p>
+  <h3>Face Recognition for Close-up Shots:</h3>
+  <ul>
+    <li>OpenCV is used to process the video, skipping every alternate frame.
+      If one or more faces are detected, then the one with the largest area is
+      selected, and this area should be greater than a certain threshold to avoid
+      detecting people in the crowd. </li>
+    <li>After a face is detected its feature vector is compared using Euclidean
+      distances with each face in the dataset, and the one with least distance is
+      selected.</li>
+    <li>We have also put an upper bound on the face distance,
+      to avoid incorrect results.</li>
+    <li>A banner for display of career highlights of the detected person has been
+      made using matplotlib.</li>
+  </ul>
+</p>
+
+
+</div>
+</div>
+</section>
+
+</body>
+<script>
+  document.querySelector(".icon").onclick = function() {
+    lightbox.style.display = "flex";
+  }
+  cross.onclick = function(e) {
+    lightbox.style.display = "";
+  }
+</script>
+
+
+</html>
